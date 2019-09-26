@@ -8,7 +8,7 @@ const { check, validationResult } = require('express-validator');
 const filterOut = {
   include: [{
     model: User,
-    attributes: {exclude: ['password', 'createdAt', 'updatedAt']}
+    attributes: {exclude: ['createdAt', 'updatedAt']}
   }],
   attributes: {exclude: ['createdAt', 'updatedAt']}
 }

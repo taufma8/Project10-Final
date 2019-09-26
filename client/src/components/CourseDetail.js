@@ -38,10 +38,10 @@ class CourseDetail extends Component {
     e.preventDefault();
     const { context } = this.props;
     const { courseData } = this.state;
-    const { emailAddress } = context.authenticatedUser;
-    const password = prompt('Please confirm password.');
+    const { emailAddress, password } = context.authenticatedUser;
+    // const password = prompt('Please confirm password.');
 
-    context.data.deleteCourse(courseData.id, emailAddress, password)
+    context.data.deleteCourse(courseData.id, emailAddress, context.userPassword)
       .then(() => {
         this.props.history.push('/')
       })

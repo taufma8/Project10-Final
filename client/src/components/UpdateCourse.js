@@ -83,9 +83,9 @@ class UpdateCourse extends Component {
     };
 
     const id = this.props.match.params.id;
-    const password = prompt('Please confirm password.');
+    // const password = prompt('Please confirm password.');
 
-    context.data.updateCourse(id, course, emailAddress, password)
+    context.data.updateCourse(id, course, emailAddress, context.userPassword)
       .then(errors => {
         if (errors.length) {
           this.setState({ errors });
