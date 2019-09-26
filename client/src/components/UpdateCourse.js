@@ -10,7 +10,7 @@ class UpdateCourse extends Component {
     estimatedTime: '',
     materialsNeeded: '', 
     errors: []
-  }
+    }
 
   componentDidMount() {
     this.props.context.data.getCourse(this.props.match.params.id)
@@ -100,7 +100,8 @@ class UpdateCourse extends Component {
   }
 
   cancel = () => {
-    this.props.history.push('/');
+    const id = this.props.match.params.id;
+    this.props.history.push(`/courses/${id}`);
   }
 
   render() {
